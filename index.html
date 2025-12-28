@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dexaz Studio | Engineering Digital Systems</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        studio: {
+                            white: '#FFFFFF',
+                            lightGrey: '#F8F9FA',
+                            black: '#0A0A0A', 
+                            charcoal: '#141414',
+                            violet: '#5B3CC4',
+                            pink: '#E94291',
+                            grey: '#64748B',
+                        }
+                    },
+                    animation: {
+                        marquee: 'marquee 45s linear infinite',
+                    },
+                    keyframes: {
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-50%)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Global Reset for Scrollbar Removal */
+        html, body {
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* IE and Edge */
+        }
+
+        ::-webkit-scrollbar {
+            display: none; /* Chrome, Safari and Opera */
+            width: 0;
+            height: 0;
+        }
+
+        body {
+            background-color: #FFFFFF;
+            color: #0A0A0A;
+            overflow-x: hidden;
+            width: 100%;
+        }
+        
+        .section-curve {
+            clip-path: ellipse(150% 100% at 50% 0%);
+        }
+
+        @media (max-width: 768px) {
+            .section-curve {
+                clip-path: ellipse(250% 100% at 50% 0%);
+            }
+        }
+
+        .float-animation {
+          animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+          0% { transform: translateY(0px); }
+          50% { transform: translateY(-12px); }
+          100% { transform: translateY(0px); }
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "convex/": "https://esm.sh/convex@^1.31.2/"
+  }
+}
+</script>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+</html>
