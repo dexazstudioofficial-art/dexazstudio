@@ -218,7 +218,6 @@ const App: React.FC = () => {
                {services.map((service, idx) => (
                  <div key={idx} className="group p-7 bg-studio-lightGrey border border-black/5 rounded-2xl hover:bg-studio-black hover:text-white transition-all duration-500 shadow-sm hover:shadow-xl">
                    <div className="mb-5 text-studio-violet group-hover:text-studio-pink transition-colors">
-                     {/* Fix: Added <any> to React.ReactElement cast to resolve property 'size' error */}
                      {React.cloneElement(service.icon as React.ReactElement<any>, { size: 22 })}
                    </div>
                    <h4 className="text-sm font-black uppercase tracking-tight leading-tight">{service.title}</h4>
@@ -232,7 +231,7 @@ const App: React.FC = () => {
              </div>
           </Section>
 
-          {/* Vision/Founder Section */}
+          {/* Vision/Founder Section - Updated to remove image */}
           <Section id="founder" className="bg-studio-lightGrey !max-w-none">
             <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
               <div className="space-y-10 text-center lg:text-left">
@@ -252,29 +251,29 @@ const App: React.FC = () => {
                   </button>
                 </div>
               </div>
+              
               <div className="relative group px-4 lg:px-0">
                 <div className="absolute -inset-6 bg-gradient-to-tr from-studio-violet/20 to-studio-pink/20 rounded-[48px] blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
-                <div className="relative bg-studio-black text-white rounded-[40px] overflow-hidden flex flex-col md:flex-row p-6 gap-10 border border-white/10 shadow-2xl">
-                  <div className="w-full md:w-64 h-80 rounded-3xl overflow-hidden bg-studio-charcoal relative">
-                    <img 
-                      src="https://images.unsplash.com/photo-1519085185756-62983055740a?q=80&w=400&h=600&auto=format&fit=crop" 
-                      alt="Siranthan - Founder" 
-                      className="w-full h-full object-cover grayscale brightness-90 hover:grayscale-0 hover:brightness-100 transition-all duration-1000" 
-                    />
+                <div className="relative bg-studio-black text-white rounded-[40px] overflow-hidden p-12 md:p-16 border border-white/10 shadow-2xl flex flex-col justify-center items-center text-center lg:items-start lg:text-left">
+                  <div className="space-y-4">
+                    <h4 className="text-5xl md:text-7xl font-black tracking-tighter leading-none">SIRANTHAN</h4>
+                    <p className="text-studio-pink font-bold text-xs uppercase tracking-[0.4em] opacity-90">FOUNDER & CHIEF ENGINEER</p>
                   </div>
-                  <div className="flex-1 flex flex-col justify-center text-center md:text-left py-4">
-                    <h4 className="text-4xl font-black tracking-tighter mb-2">SIRANTHAN</h4>
-                    <p className="text-studio-pink font-bold text-[10px] uppercase tracking-[0.3em] mb-8">FOUNDER & CHIEF ENGINEER</p>
-                    <div className="flex justify-center md:justify-start gap-5">
-                      <a 
-                        href="https://siranthan.vercel.app/" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center hover:bg-studio-pink hover:scale-110 transition-all cursor-pointer border border-white/10 group/icon"
-                      >
-                        <ExternalLink size={22} className="group-hover/icon:rotate-12 transition-transform" />
-                      </a>
-                    </div>
+                  
+                  <div className="mt-12 w-full lg:w-auto">
+                    <a 
+                      href="https://siranthan.vercel.app/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-4 px-10 py-5 bg-white/5 border border-white/10 rounded-2xl text-[10px] font-black uppercase tracking-[0.3em] hover:bg-studio-pink hover:border-studio-pink hover:text-white transition-all duration-500 group/btn shadow-xl"
+                    >
+                      Visit Profile <ExternalLink size={16} className="group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
+                    </a>
+                  </div>
+
+                  {/* Decorative Elements */}
+                  <div className="absolute top-0 right-0 p-8 opacity-10">
+                    <Logo className="w-24 h-24" />
                   </div>
                 </div>
               </div>
